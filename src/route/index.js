@@ -4,33 +4,7 @@ const express = require('express')
 const router = express.Router()
 
 // ================================================================
-var header = {
-  name: {
-    firstname: 'Ivan',
-    lastname: 'Ivanov',
-  },
-  position: 'Junior Fullstack JS Developer',
-  salary: '600$ в місяць',
-  address: 'м.Черкаси вул. Смілянська , 53',
-    }
 
-    var footer = {
-      social:{
-        email: {
-          text:'dmytro@mail.com',
-          href: 'mailto:dmytro@mail.com',
-        },
-        phone: {
-          text: '+380670000123',
-          href: 'tel:+380670000123',
-        },
-        linkedin: {
-          text:'LinkedIn',
-          href:'https://www.linkedin.com/in/dmytro-test',
-        },
-      },     
-    }
-//=================================================================
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
@@ -49,172 +23,11 @@ router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
     // ↙ сюди вводимо JSON дані
-    page:{
-      title: 'Resume | Summary',
-    },
- 
-    header,
-
-    main: {
-      title:'Summary',
-      summary: {
-       
-        text: 'Open-minded for new technologies, with 1 years of experience in development. Whenever I start ',
-      },
-        
-      experience: {
-        title:'Other experience',
-        text: ' Pet project for parsing sport eparing probability betting data',
-      },
-
-        },
-  
-        footer,
-  
-  
-  })
-})
-
-//              ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/skills', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
-  res.render('skills', {
-    // ↙ сюди вводимо JSON дані
-    page:{
-      title: 'Resume | Skills',
-    },
- 
-    header,
-
-    main: {
-      title:'All skills',
-   skills:[
-    {
-      name:  'HTML',
-      point: 10,
-      isTop: true,  
-    }, 
-    {
-      name:   'Handlebar',
-      point: 8,
-      isTop: false,
-    }, 
-    {
-      name:   'VS Code',
-      point: 8,
-      isTop: true,
-    },
-    {
-      name:   'Git',
-      point: 7,
-      isTop: true,
-    },
-    {
-      name:   'Terminal',
-      point: 8,
-      isTop: false,
-    },
-   
-    {
-      name:   'NPM',
-      point: 9,
-    
-    },
-   {
-      name:   'React.js',
-      point: 0,
-   },
-   
-   {
-    name:   'NTP',
-    point: null,
- }
-
-   ],
-
-   title:'My hobbies',
-   hobbies:[
-    {
-      name: 'Music',
-      isMain: true,
-    },
-    {
-      name: 'Dance',
-      isMain: true,
-    },
-    {
-      name: 'Sport',
-      isMain: false,
-    },
-
-   ],
-
-
-        },
-  
-        footer,
-  
-  
-  })
-})
-
-
-router.get('/education', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
-  res.render('education', {
-    // ↙ сюди вводимо JSON дані
-    page:{
-      title: 'Resume |Education',
-    },
- 
-    header,
-
-    main: {
-      title:'My educstion',
-      education:[
-        {
-          name:'Червонослобідська школа №2',
-          isEnd: true,
-
-        },
-        {
-          name:'Черкаський Державний Технологічний Уніварситет',
-          isEnd: true,
-        },
-        {
-          name:  'IT BRAINS',
-          isEnd: false,
-         } ,
-      ],
-
-      
-      title: 'My certificates',
-      certificates: [
-        {
-          name:'школа',
-          id:123123,
-        },
-        {
-          name:'університет',
-          id:123123,
-        },
-        {
-          name:'курси',
-          id:123123,
-        },
-
-
-      ],
-         
-    },
-  
-        footer,
-  
-  
   })
 })
 
 // ================================================================
+
 //              ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/work', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
@@ -614,6 +427,7 @@ router.get('/web', function (req, res) {
 })
 
 // ================================================================
+
 
 // Підключаємо роутер до бек-енду
 module.exports = router
